@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>制作一个简单的菜单动画效果</title>
+    <style media="screen">
+      body {
+        text-align: center;
+      }
+      span {
+        width: 130.5px;
+        transition-property:color;
+        transition-duration:0.5s;
+        transition-timing-function:linear;
+      }
+      .line {
+        color: blue;
+        width: 0px;
+        height: 3px;
+        background-color:blue;
+        line-height:1px;
+        border:none;
+        margin-bottom: 21px;
+        transition-property: width;
+        transition-duration:0.5s;
+        transition-timing-function:linear;
+      }
+    </style>
+    <script type="text/javascript">
+      var cont = 0;
+      function changeStyle() {
+        if (cont % 2 !== 0) {
+          document.getElementById('span').style.color = "black";
+          document.getElementById('line').style.width = "0px";
+        } else {
+          document.getElementById('span').style.color = "blue";
+          document.getElementById('line').style.width = "130.5px";
+        }
+        cont++;
+      }
+    </script>
+  </head>
+  <body>
+    <h1><span id="span">前端学院</span></h1>
+    <hr id="line" class="line">
+    <button id="changeStyle" type="button" name="button" onclick="changeStyle()">切换样式</button>
+  </body>
+</html>
