@@ -1,0 +1,47 @@
+body {
+  text-align: center;
+}
+span {
+  width: 130.5px;
+  transition: color 0.2s linear;
+  /* Firefox 4 */
+  -moz-transition:color 0.2s linear;
+  /* Safari and Chrome */
+  -webkit-transition:color 0.2s linear;
+  /* Opera */
+  -o-transition:color 0.2s linear;
+}
+.line {
+  color: blue;
+  width: 0px;
+  height: 3px;
+  background-color:blue;
+  line-height:1px;
+  border:none;
+  margin-bottom: 21px;
+  transition: width 0.2s linear;
+  /* Firefox 4 */
+  -moz-transition:width 0.2s linear;
+  /* Safari and Chrome */
+  -webkit-transition:width 0.2s linear;
+  /* Opera */
+  -o-transition:width 0.2s linear;
+}
+input {
+  border:1px solid #dedede;
+  background: white;
+  padding:5px 15px;
+  border-radius:5px;
+  /* Safari and Chrome */
+  -webkit-border-radius:5px;
+  /* Firefox 4 */
+  -moz-border-radius:5px;
+  color:black;
+  font-size:22px;
+  font-weight: bold;
+  box-shadow: 1px 1px 1px #a5a4a4;
+  outline: none;
+}
+input:active {
+  background: #cfdafc;
+}
