@@ -1,0 +1,62 @@
+.container {
+  position: relative;
+}
+.box {
+  position: absolute; /* control all divs inline */
+  transform-origin: center;
+  text-align: center;
+  width: 60px;
+  height: 68px;
+  font-size: 18px;
+  line-height: 68px;
+  color: rgb(0,0,0);
+  font-weight: 400;
+  background-color: #f7f5f5;
+  border: 1px solid #ebebeb;
+}
+.box0 {
+  transform: translate(0px,26px);
+  -ms-transform:translate(0px,26px); /* IE 9 */
+  -moz-transform:translate(0px,26px); /* Firefox */
+  -webkit-transform:translate(0px,26px); /* Safari and Chrome */
+  -o-transform:translate(0px,26px); /* Opera */
+}
+.box1 {
+  transform:matrix(1,0,0.5,1,107,26);
+  -ms-transform:matrix(1,0,0.5,1,107,26); /* IE 9 */
+  -moz-transform:matrix(1,0,0.5,1,107,26); /* Firefox */
+  -webkit-transform:matrix(1,0,0.5,1,107,26); /* Safari and Chrome */
+  -o-transform:matrix(1,0,0.5,1,107,26); /* Opera */
+}
+
+.box2 {
+  transform:matrix(0.5,0,0,1,233,26);
+  -ms-transform:matrix(0.5,0,0,1,233,26); /* IE 9 */
+  -moz-transform:matrix(0.5,0,0,1,233,26); /* Firefox */
+  -webkit-transform:matrix(0.5,0,0,1,233,26); /* Safari and Chrome */
+  -o-transform:matrix(0.5,0,0,1,233,26); /* Opera */
+}
+
+.box3 {
+  transform:matrix(0.707,0.707,-0.707,0.707,319,26);
+  -ms-transform:matrix(0.707,0.707,-0.707,0.707,319,26); /* IE 9 */
+  -moz-transform:matrix(0.707,0.707,-0.707,0.707,319,26); /* Firefox */
+  -webkit-transform:matrix(0.707,0.707,-0.707,0.707,319,26); /* Safari and Chrome */
+  -o-transform:matrix(0.707,0.707,-0.707,0.707,319,26); /* Opera */
+}
+
+.box4 {
+  transform:matrix(1,0,0,1,422,47);
+  -ms-transform:matrix(1,0,0,1,422,47); /* IE 9 */
+  -moz-transform:matrix(1,0,0,1,422,47); /* Firefox */
+  -webkit-transform:matrix(1,0,0,1,422,47); /* Safari and Chrome */
+  -o-transform:matrix(1,0,0,1,422,47); /* Opera */
+}
+
+.box5 {
+  transform:matrix(0.707,0.707,0,0.707,539,47);
+  -ms-transform:matrix(0.707,0.707,0,0.707,539,47); /* IE 9 */
+  -moz-transform:matrix(0.707,0.707,0,0.707,539,47); /* Firefox */
+  -webkit-transform:matrix(0.707,0.707,0,0.707,539,47); /* Safari and Chrome */
+  -o-transform:matrix(0.707,0.707,0,0.707,539,47); /* Opera */
+}
