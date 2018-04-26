@@ -1,0 +1,18 @@
+.card {
+  margin: 100px auto;
+  height:350px;
+  width: 250px;
+  background-image: url('./assets/正面.jpg');
+  transition: transform 0.5s linear, background-image 0.5s cubic-bezier(0.99, 0.01, 0.01, 0.99);
+  -moz-transition: -moz-transform 0.5s linear, background-image 0.5s cubic-bezier(0.99, 0.01, 0.01, 0.99);
+  -webkit-transition: -webkit-transform 0.5s linear, background-image 0.5s cubic-bezier(0.99, 0.01, 0.01, 0.99);
+  -o-transition: -o-transform 0.5s linear, background-image 0.5s cubic-bezier(0.99, 0.01, 0.01, 0.99);
+}
+.card:hover {
+  transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg); /* IE 9 */
+  -moz-transform: rotateY(180deg); /* Firefox */
+  -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+  -o-transform: rotateY(180deg); /* Opera */
+  background-image: url('./assets/反面.jpg');
+}
