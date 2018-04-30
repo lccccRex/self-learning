@@ -8,8 +8,7 @@
           function animation(int) {
             switch (int) {
               case 1:
-                window.alert(1);
-                document.getElementById('img1').css.animation = "img1Move 0.5s;";
+                document.getElementById('img1').style.animation = "img1Move 0.5s;";
                 break;
               case 2:
 
@@ -27,21 +26,20 @@
         </script>
     </head>
     <body>
-      <div class="container">
-        <div id="img5" class="img img5"><img src="assets/img5.jpg" alt="First Image" /></div>
-        <div id="img4" class="img img4"><img src="assets/img4.jpg" alt="First Image" /></div>
-        <div id="img3" class="img img3"><img src="assets/img3.jpg" alt="First Image" /></div>
-        <div id="img2" class="img img2"><img src="assets/img2.jpg" alt="First Image" /></div>
-        <div id="img1" class="img img1"><img src="assets/img1.jpg" alt="First Image" /></div>
-        <div class="wrapper">
-            <ul class="img-slider">
-                <li onclick="animation(1)"><img src="assets/img1.jpg" alt="First Image" /></li>
-                <li onclick="animation(2)"><img src="assets/img2.jpg" alt="Second Image" /></li>
-                <li onclick="animation(3)"><img src="assets/img3.jpg" alt="Third Image" /></li>
-                <li onclick="animation(4)"><img src="assets/img4.jpg" alt="Forth Image" /></li>
-                <li onclick="animation(5)"><img src="assets/img5.jpg" alt="Fifth Image" /></li>
-            </ul>
+      <div id="wrap">
+        <div class="slider">
+          <a href="#img1"><img src="assets/img1.jpg"></a>
+          <a href="#img2"><img src="assets/img2.jpg"></a>
+          <a href="#img3"><img src="assets/img3.jpg"></a>
+          <a href="#img4"><img src="assets/img4.jpg"></a>
+          <a href="#img5"><img src="assets/img5.jpg"></a>
         </div>
+
+        <div id="img1"><img src="assets/img1.jpg" class="img1"></div>
+        <div id="img2"><img src="assets/img2.jpg" class="img2"></div>
+        <div id="img3"><img src="assets/img3.jpg" class="img3"></div>
+        <div id="img4"><img src="assets/img4.jpg" class="img4"></div>
+        <div id="img5"><img src="assets/img5.jpg" class="img5"></div>
       </div>
     </body>
 </html>

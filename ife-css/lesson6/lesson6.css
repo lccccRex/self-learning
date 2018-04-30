@@ -1,129 +1,212 @@
-* {
+*{
   margin: 0;
   padding: 0;
 }
-.container {
-  position: relative;
-}
-.wrapper {
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-ul {
-  list-style: none;
-}
-ul.img-slider {
-  position: fixed;
-  width: 500%;
-  overflow: hidden;
-  bottom: 0;
-}
-.img-slider li {
-  width: 190px;
-  line-height: 25px;
-  display: inline;
-  float: left;
-  margin: 0 5px;
-}
-.img-slider img {
-  max-width: 100%;
-  height: auto;
-  border: none;
-
-  -moz-box-shadow:0px 0px 7px #eee;
-  -webkit-box-shadow:0px 0px 7px #eee;
-  box-shadow:0px 0px 7px #eee;
-}
-
-.img {
+html,body{
   width: 100%;
   height: 100%;
-  position: fixed;
-  text-align: center;
-
+  overflow: hidden;
 }
-.img > img {
-  height: 90%;
-  width: 90%;
+#wrap{
+  width: 800px;
+  height: 500px;
+  margin: 100px auto;
+  position: relative;
+  overflow: hidden;
 }
-.img1 {
-  /*animation:img1Move 0.5s;
-  -webkit-animation:img1Move 0.5s; /* Safari 和 Chrome */*/
+.slider{
+  position: absolute;
+  width: 800px;
+  height: 60px;
+  bottom: 30px;
+  left: 15%;
+  z-index: 10;
 }
-.img2 {
-  animation:img2Move 0.5s;
-  -webkit-animation:img2Move 0.5s; /* Safari 和 Chrome */
+.slider a{
+  float: left;
+  margin-left: 8px;
+  display: inline-block;
 }
-.img3 {
-  animation:img3Move 1s;
-  -webkit-animation:img3Move 1s; /* Safari 和 Chrome */
+.slider a img{
+  width: 90px;
 }
-.img4 {
-  animation:img4Move 1s;
-  -webkit-animation:img4Move 1s; /* Safari 和 Chrome */
+#img1{
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 0;
+  left: -800px;
 }
-.img5 {
-  animation:img5Move 0.7s;
-  -webkit-animation:img5Move 0.7s; /* Safari 和 Chrome */
+#img2{
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 0;
+  left: 0;
 }
-
-@keyframes img1Move
-{
-  from {left:-500px;}
-  to {left:0px;}
+#img3{
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 0;
+  left: 0;
 }
-
-@-webkit-keyframes img1Move /*Safari and Chrome*/
-{
-  from {left:-500px;}
-  to {left:0px;}
+#img4{
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 0;
+  left: 0;
 }
-
-@keyframes img2Move
-{
-  from {left:350px;}
-  to {left:0px;}
+#img5{
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 0;
+  left: 0;
 }
-
-@-webkit-keyframes img2Move /*Safari and Chrome*/
-{
-  from {left:350px;}
-  to {left:0px;}
+.img1{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 800px;
+  height: 500px;
 }
-
-@keyframes img3Move
-{
-  from {transform: scale(0.1,0.1);}
-  to {transform: scale(1,1);}
+.img2{
+  position: absolute;
+  left: 0;
+  top:500px;
+  width: 800px;
+  height: 500px;
 }
-
-@-webkit-keyframes img3Move /*Safari and Chrome*/
-{
-  from {transform: scale(0.1,0.1);}
-  to {transform: scale(1,1);}
+.img3{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 800px;
+  height: 500px;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
 }
-
-@keyframes img4Move
-{
-  from {transform: scale(2,2);}
-  to {transform: scale(1,1);}
+.img4{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 800px;
+  height: 500px;
+  display: none;
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
 }
-
-@-webkit-keyframes img4Move /*Safari and Chrome*/
-{
-  from {transform: scale(2,2);}
-  to {transform: scale(1,1);}
+.img5{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 800px;
+  height: 500px;
+  -webkit-transform: scale(0) rotate(-360deg);
+  -moz-transform: scale(0) rotate(-360deg);
+  -ms-transform: scale(0) rotate(-360deg);
+  -o-transform: scale(0) rotate(-360deg);
+  transform: scale(0) rotate(-360deg);
 }
-
-@keyframes img5Move
-{
-  from {transform: scale(0.1,0.1) rotate(-360deg);}
-  to {transform: scale(1,1) rotate(0deg);}
+#img1:target .img1{
+  -webkit-animation:img1Move 0.5s ease-out;
+  -o-animation:img1Move 0.5s ease-out;
+  animation: img1Move 0.5s ease-out;
+  animation-fill-mode: both;/*动画执行后保持最后一帧*/
 }
-
-@-webkit-keyframes img5Move /*Safari and Chrome*/
-{
-  from {transform: scale(0.1,0.1) rotate(-360deg);}
-  to {transform: scale(1,1) rotate(0deg);}
+@keyframes img1Move {
+  form{
+    -webkit-transform:  translateX(0);
+    -moz-transform:  translateX(0);
+    -ms-transform:  translateX(0);
+    -o-transform:  translateX(0);
+    transform:  translateX(0);}
+  to{
+    -webkit-transform: translateX(800px);
+    -moz-transform: translateX(800px);
+    -ms-transform: translateX(800px);
+    -o-transform: translateX(800px);
+    transform: translateX(800px);
+  }
+}
+#img2:target .img2{
+  -webkit-animation: img2Move 0.5s ease-out;
+  -o-animation: img2Move 0.5s ease-out;
+  animation: img2Move 0.5s ease-out;
+  animation-fill-mode:both;/*动画执行后保持最后一帧*/
+}
+@keyframes img2Move {
+  form{top: 500px;}
+  to{top:0;}
+}
+#img3:target .img3{
+  -webkit-animation: img3Move 1s ease-in;
+  -o-animation: img3Move 1s ease-in;
+  animation: img3Move 1s ease-in;
+  animation-fill-mode:both;/*动画执行后保持最后一帧*/
+}
+@keyframes img3Move {
+  form{
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);}
+  to{
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+#img4:target .img4{
+  display: inline-block;
+  -webkit-animation: img4Move 1s ease-out;
+  -o-animation: img4Move 1s ease-out;
+  animation: img4Move 1s ease-out;
+  animation-fill-mode:both;/*动画执行后保持最后一帧*/
+}
+@keyframes img4Move {
+  form{
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);}
+  to{
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+#img5:target .img5{
+  -webkit-animation: img5Move 0.7s ease-in-out;
+  -o-animation: img5Move 0.7s ease-in-out;
+  animation: img5Move 0.7s ease-in-out;
+  animation-fill-mode:both;/*动画执行后保持最后一帧*/
+}
+@keyframes img5Move {
+  form{
+    -webkit-transform: scale(0) rotate(-360deg);
+    -moz-transform: scale(0) rotate(-360deg);
+    -ms-transform: scale(0) rotate(-360deg);
+    -o-transform: scale(0) rotate(-360deg);
+    transform: scale(0) rotate(-360deg);}
+  to{
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
 }
