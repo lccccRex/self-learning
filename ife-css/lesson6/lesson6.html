@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <title>利用 CSS animation 制作一个炫酷的 Slider</title>
+        <link rel="stylesheet" href="lesson6.css">
+        <script type="text/javascript">
+          function animation(int) {
+            switch (int) {
+              case 1:
+                window.alert(1);
+                document.getElementById('img1').css.animation = "img1Move 0.5s;";
+                break;
+              case 2:
+
+                break;
+              case 3:
+
+                break;
+              case 4:
+
+                break;
+              default:
+
+            }
+          }
+        </script>
+    </head>
+    <body>
+      <div class="container">
+        <div id="img5" class="img img5"><img src="assets/img5.jpg" alt="First Image" /></div>
+        <div id="img4" class="img img4"><img src="assets/img4.jpg" alt="First Image" /></div>
+        <div id="img3" class="img img3"><img src="assets/img3.jpg" alt="First Image" /></div>
+        <div id="img2" class="img img2"><img src="assets/img2.jpg" alt="First Image" /></div>
+        <div id="img1" class="img img1"><img src="assets/img1.jpg" alt="First Image" /></div>
+        <div class="wrapper">
+            <ul class="img-slider">
+                <li onclick="animation(1)"><img src="assets/img1.jpg" alt="First Image" /></li>
+                <li onclick="animation(2)"><img src="assets/img2.jpg" alt="Second Image" /></li>
+                <li onclick="animation(3)"><img src="assets/img3.jpg" alt="Third Image" /></li>
+                <li onclick="animation(4)"><img src="assets/img4.jpg" alt="Forth Image" /></li>
+                <li onclick="animation(5)"><img src="assets/img5.jpg" alt="Fifth Image" /></li>
+            </ul>
+        </div>
+      </div>
+    </body>
+</html>
