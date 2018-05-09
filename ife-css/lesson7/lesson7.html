@@ -2,8 +2,9 @@
 <html>
 
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>使用 animate.css 制作流畅交互动效</title>
+  <link rel="stylesheet" href="css/animate.css">
   <style type="text/css">
     html {
       font-size: 62.5%;
@@ -76,7 +77,7 @@
       font-size: 1.6rem;
       outline: 0;
       border: none;
-      border-bottom: solid 1px #ddd;
+      border-bottom: solid 3px #ddd;
     }
 
     .form__input:focus {
@@ -100,8 +101,13 @@
       position: absolute;
     }
 
-    .form__input:focus~.form__label .form__label-content,
-    .form--filled .form__label-content {}
+    /* 此处有坑 .form__label__content .form__label-content*/
+
+    .form__input:focus~.form__label .form__label__content,
+    .form--filled .form__label__content {
+      font-size: 12px;
+      animation: move .3s linear;
+    }
 
     .btn {
       width: 100%;
@@ -117,12 +123,39 @@
       font-weight: 400;
       font-size: 1.6rem;
       box-shadow: 0 1px 3px 0 rgba(3, 30, 51, 0.24), 0 1px 2px 0 rgba(3, 30, 51, 0.12);
-      transition: all 0.2s ease;
     }
 
     .btn:focus,
     .btn:hover {
       background-color: #0d8aee;
+    }
+
+    .form__label::before {
+      content: '';
+      position: absolute;
+      background-color: #0d8aee;
+      height: 3px;
+      width: 0;
+      transition: all .5s ease;
+      top: 61px;
+    }
+
+    @keyframes move {
+      0% {
+        top: 12px;
+      }
+      100% {
+        top: -2px;
+      }
+    }
+
+    .form__input:focus~.form__label::before {
+      width: 100%;
+    }
+
+    .top {
+      font-size: 12px;
+      animation: move 0 ease;
     }
   </style>
 </head>
@@ -133,16 +166,16 @@
       <h3>Login</h3>
       <form>
         <div class="form__wrapper" data-wow-delay="0.5s">
-          <input type="email" class="form__input" id="email" name="email">
+          <input class="form__input" id="email" name="email" type="email">
           <label class="form__label" for="email">
                         <span class="form__label__content">Email</span>
-                        </label>
+                    </label>
         </div>
         <div class="form__wrapper" data-wow-delay="0.6s">
-          <input type="password" class="form__input" id="password" name="password">
+          <input class="form__input" id="password" name="password" type="password">
           <label class="form__label" for="password">
                         <span class="form__label__content">Password</span>
-                        </label>
+                    </label>
         </div>
         <div class="form__wrapper__submit pulse infinite" data-wow-delay="0.7s">
           <div class="form__input__submit">
@@ -152,7 +185,22 @@
       </form>
     </section>
   </section>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
 </body>
-<script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
+<script>
+  $(".form__input").blur(function() {
+    if ($("#email").val() && $("#password").val()) {
+      $(".btn").addClass("animated infinite pulse");
+    } else {
+      $(".btn").removeClass("animated infinite pulse");
+    }
+    if ($(this).val()) {
+      $(this).next().children(".form__label__content").addClass("top");
+    } else {
+      $(this).next().children(".form__label__content").removeClass("top");
+    }
+  });
+</script>
 
 </html>
